@@ -3,7 +3,8 @@ class Api::V1::MessagesController < ApplicationController
 
   # GET /messages
   def index
-    @messages = Message.all
+    random_num = Random.rand(1...5)
+    @messages = Message.where(id: random_num)
 
     render json: @messages
   end
